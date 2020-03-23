@@ -1,0 +1,367 @@
+@font-face { font-family: Montserrat-Regular; src: url('../fonts/montserrat/Montserrat-Regular.ttf'); }
+@font-face { font-family: Montserrat-Italic; src: url('../fonts/montserrat/Montserrat-ExtraLightItalic.ttf'); }
+@font-face { font-family: Montserrat-Bolt; src: url('../fonts/montserrat/Montserrat-Bold.ttf'); }
+
+/* Colores 
+
+#00c292 - success
+#f6c23e - warning
+#f44336 - danger
+#03a9f4 - info
+
+colores bootstrap default
+
+#28a745 - success
+#ff7000 - warning
+#dc3545 - danger
+#17a2b8 - info
+
+*/
+
+
+body{
+  font-family: Montserrat-Regular;
+  background:#f4f4f4;
+}
+b{ font-family: Montserrat-Bolt; }
+i{ font-family: Montserrat-Italic; }
+
+/* CSS */
+
+.precio_prod{
+  z-index: 4;
+  font-size: 14px;
+  color: white;
+  display: -webkit-box; 
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 20px;
+  padding: 10px;
+  border-radius: 11px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #000000a3;
+}
+.dropdown-toggle::after{
+    display:none;
+}
+.dropleft .dropdown-toggle::before {
+  display:none;
+}
+/*--------------------------------------------------------------------------
+  card Style
+--------------------------------------------------------------------------*/
+.card{
+  border-radius: 0px;
+  border: 0;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #e4e4e4;
+    border: 0;
+    color: #6c6d6d;
+}
+.card-header:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+}
+.card-footer:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0;
+}
+.card-footer {
+    background-color: #e4e4e4;
+    border: 0;
+    color: #6c6d6d;
+}
+/*--------------------------------------------------------------------------
+  list group Style
+--------------------------------------------------------------------------*/
+.list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+}
+.list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0;
+}
+
+.list-group-item {
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  border-right: 0;
+  border-left: 0;
+}
+/*--------------------------------------------------------------------------
+  modal Style
+--------------------------------------------------------------------------*/
+.modal-content,.modal-header,.modal-body,.modal-footer{
+  border-radius: 0px;
+  border: 0;
+  color: #757575;
+}
+/*--------------------------------------------------------------------------
+  navbar Style
+--------------------------------------------------------------------------*/
+.navbar{
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  color: 0 1px 12px rgba(0,0,0,0.4);
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #aec62c;
+    color: #fff;
+}
+/*--------------------------------------------------------------------------
+  form Style
+--------------------------------------------------------------------------*/
+.form-control {
+    background-color: #e0e0e0;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 0;
+    height: 50px;
+    padding: 0px 20px;
+}
+
+.form-control:focus {
+    border-color: #006DF0;
+    outline: 0;
+    box-shadow: none;
+}
+
+/*--------------------------------------------------------------------------
+  btn Style
+--------------------------------------------------------------------------*/
+.btn{
+  color: #fff;
+  border-radius: 0;
+}
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.btn-default{
+  color: #272727;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  color: #fff;
+  background-color: #535b60;
+  border-color: #535b60;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #535b60;
+  border-color: #535b60;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #535b60;
+  border-color: #535b60;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #535b60;
+  border-color: #535b60;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #535b60;
+  border-color: #535b60;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open .dropdown-toggle.btn-danger {
+  color: #fff;
+  background-color: #535b60;
+  border-color: #535b60;
+}
+/*--------------------------------------------------------------------------
+  Footer
+--------------------------------------------------------------------------*/
+
+footer{
+  background:#282828;
+  color:#ffffff;
+  text-align:center;
+  padding:30px;
+  margin-top:30px;
+}
+
+/*--------------------------------------------------------------------------
+  Background colors
+--------------------------------------------------------------------------*/
+.bg-color-1 { background-color: #3f51b5; }
+
+.bg-color-2 { background-color: #03a9f4; }
+
+.bg-color-3 { background-color: #009688; }
+
+.bg-color-4 { background-color: #4caf50; }
+
+.bg-color-5 { background-color: #ffeb3b; }
+
+.bg-color-6 { background-color: #ff9800; }
+  
+.bg-color-7 { background-color: #ff5722; }
+
+.bg-color-8 { background-color: #f44336; }
+
+.bg-color-9 { background-color: #e91e63; }
+
+.bg-color-10 { background-color: #9c27b0; }
+
+.bg-color-11 { background-color: #fff; }
+
+.bg-color-12 { background-color: #333; }
+
+/*--------------------------------------------------------------------------
+  text colors
+--------------------------------------------------------------------------*/
+
+.text-color-1 {
+  color: #3f51b5 !important; 
+  transition: .2s all;
+}
+a.text-color-1:hover, a.text-color-1:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-2 {
+  color: #03a9f4 !important; 
+}
+a.text-color-2:hover, a.text-color-2:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-3 {
+  color: #009688 !important; 
+}
+a.text-color-3:hover, a.text-color-3:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-4 {
+  color: #4caf50 !important; 
+}
+a.text-color-4:hover, a.text-color-4:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-5 {
+  color: #ffeb3b !important; 
+}
+a.text-color-5:hover, a.text-color-5:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-6 {
+  color: #ff9800 !important; 
+}
+a.text-color-6:hover, a.text-color-6:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-7 {
+  color: #ff5722 !important; 
+}
+a.text-color-7:hover, a.text-color-7:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-8 {
+  color: #f44336 !important; 
+}
+a.text-color-8:hover, a.text-color-8:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-9 {
+  color: #e91e63 !important; 
+}
+a.text-color-9:hover, a.text-color-9:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+.text-color-10 {
+  color: #9c27b0 !important; 
+}
+a.text-color-10:hover, a.text-color-10:focus {
+  color: #5a5c69 !important;
+  transition: .2s all;
+}
+
+/*--------------------------------------------------------------------------
+  puntos de corte 
+--------------------------------------------------------------------------*/
+/* SM*/
+@media (max-width: 576px) {
+  .precio_prod{ font-size:25px; height: 35px; }
+    .table{
+      font-size: 10px;
+      }
+} 
+/* MD*/
+@media (min-width: 768px) { 
+  .precio_prod{ font-size:20px; height: 30px; } 
+}
+/* LG*/
+@media (min-width: 992px) {
+  .precio_prod{ font-size:14px; height: 20px; }
+  .navbar {
+    padding: 15px 30px;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+  }
+  .top-nav-collapse {
+     padding: 5px 15px;
+  } 
+}
+/* XL*/
+@media (min-width: 1200px) {}
+
