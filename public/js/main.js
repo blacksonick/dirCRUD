@@ -1,4 +1,8 @@
-/*Ingresa tus script propios aqui*/
+/* Ingresa tus script propios aqui*/
+
+var server = window.location.hostname+':'+location.port;
+var URL = 'http://'+server+'/direccion/';
+
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
         $(".fixed-top").addClass("top-nav-collapse");
@@ -23,3 +27,22 @@ $(document).ready(function(){
  $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+/*---------- Listar Estados/Municipios/Ciudades/Parroquias ----------*/
+$(document).ready(function(){
+    $("#id_direccion").change(function(){
+        $.get(URL+'/',"id_estado="+$("#id_estado").val(), function(respuesta){
+            $("#id_municipio").html(respuesta);
+        });
+    });
+    $("#id_estado").change(function(){
+        $.get(URL+'jQuery/ciudad',"id_estado="+$("#id_estado").val(), function(respuesta){
+            $("#id_ciudad").html(respuesta);
+        });
+    });
+    $("#id_municipio").change(function(){
+        $.get(URL+'jQuery/parroquia',"id_municipio="+$("#id_municipio").val(), function(respuesta){
+            $("#id_parroquia").html(respuesta);
+        });
+    });
+});

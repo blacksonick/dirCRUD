@@ -12,7 +12,6 @@ class DireccionController extends Controller
         $data['direccion'] = Direccion::orderBy('id','desc')->paginate(10);
         $data['i'] = 1;
         return view('direccion.index',$data);
-        
     }
     public function create()
     {
@@ -20,17 +19,18 @@ class DireccionController extends Controller
     }
     public function store(Request $request)
     {
-        $direccion  = new Direccion;
+        $direccion              = new Direccion;
         $direccion->estado      = ucwords($request->estado);
-        $direccion->municipio      = ucwords($request->municipio);
-        $direccion->ciudad = ucwords($request->ciudad);
-        $direccion->parroquia = ucwords($request->parroquia);
-        $direccion->calle = ucwords($request->calle);
-        $direccion->avenida = ucwords($request->avenida);
-        $direccion->nro_casa = ucwords($request->nro_casa);
+        $direccion->municipio   = ucwords($request->municipio);
+        $direccion->ciudad      = ucwords($request->ciudad);
+        $direccion->parroquia   = ucwords($request->parroquia);
+        $direccion->calle       = ucwords($request->calle);
+        $direccion->avenida     = ucwords($request->avenida);
+        $direccion->nro_casa    = ucwords($request->nro_casa);
         $direccion->save();
 
-        return redirect()->route('direccion.index')->with('success','Dirección registrada satisfactoriamente.');    }
+        return redirect()->route('direccion.index')->with('success','Dirección registrada satisfactoriamente.');    
+    }
     public function show($id)
     {
         //
@@ -43,26 +43,27 @@ class DireccionController extends Controller
     {
 
         $request->validate([
-            'estado' => 'required',
-            'municipio' => 'required',
-            'ciudad' => 'required',
-            'parroquia' => 'required',
-            'calle' => 'required',
-            'avenida' => 'required',
-            'nro_casa' => 'required'
+            'estado'        => 'required',
+            'municipio'     => 'required',
+            'ciudad'        => 'required',
+            'parroquia'     => 'required',
+            'calle'         => 'required',
+            'avenida'       => 'required',
+            'nro_casa'      => 'required'
         ]);
          
         $update = [
-            'estado' => ucwords($request->estado), 
-            'municipio' => ucwords($request->municipio),
-            'ciudad' => ucwords($request->ciudad),
-            'parroquia' => ucwords($request->parroquia),
-            'calle' => ucwords($request->calle),
-            'avenida' => ucwords($request->avenida),
-            'nro_casa' => ucwords($request->nro_casa)
+            'estado'        => ucwords($request->estado), 
+            'municipio'     => ucwords($request->municipio),
+            'ciudad'        => ucwords($request->ciudad),
+            'parroquia'     => ucwords($request->parroquia),
+            'calle'         => ucwords($request->calle),
+            'avenida'       => ucwords($request->avenida),
+            'nro_casa'      => ucwords($request->nro_casa)
         ];
 
         Direccion::where('id',$id)->update($update);
+        
         return redirect()->route('direccion.index')->with('success','Dirección actualizada satisfactoriamente!');
     }
     public function destroy($id)

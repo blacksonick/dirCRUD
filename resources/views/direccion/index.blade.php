@@ -159,6 +159,11 @@
                 @endforeach
                 </tbody>
             </table>
+            <div id="id_direccion">
+                <ul>
+                    
+                </ul>
+            </div>
         </div>
     </div>
 </div>
