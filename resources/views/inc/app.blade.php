@@ -23,15 +23,13 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    @guest
-                    
-                    @else
+                    @if (auth()->check())
                     <ul class="navbar-nav mr-auto ">
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Direcciones">
                             <a class="nav-link" href="{{ url('/direccion') }}">{{ __('Direcciones') }}</a>
                         </li>
                     </ul>
-                    @endguest
+                    @endif
                     <ul class="navbar-nav ml-auto">
                     @guest
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesión">

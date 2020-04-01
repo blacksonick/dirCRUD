@@ -1,29 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Direccion;
 use Illuminate\Http\Request;
+
+use App\Direction;
+use App\State;
 
 class DireccionController extends Controller
 {
-    public function index()
-    {
+    public function index(){
 
-        $data['direccion'] = Direccion::orderBy('id','desc')->paginate(10);
+        $data['direccion'] = Direction::orderBy('id','desc')->paginate(10);
         $data['i'] = 1;
         return view('direccion.index',$data);
     }
-    public function create()
-    {
-        return view('direccion.create');
+    public function create(){
+        $data['estados'] = State::all();
+        return view('direccion.create',$data);
     }
-    public function store(Request $request)
-    {
-        $direccion              = new Direccion;
-        $direccion->estado      = ucwords($request->estado);
-        $direccion->municipio   = ucwords($request->municipio);
-        $direccion->ciudad      = ucwords($request->ciudad);
-        $direccion->parroquia   = ucwords($request->parroquia);
+    public function store(Request $request){
+        $direccion              = new Direction;
+        $direccion->id_estado      = ucwords($request->estado);
+        $direccion->id_municipio   = ucwords($request->municipio);
+        $direccion->id_ciudad      = ucwords($request->ciudad);
+        $direccion->id_parroquia   = ucwords($request->parroquia);
         $direccion->calle       = ucwords($request->calle);
         $direccion->avenida     = ucwords($request->avenida);
         $direccion->nro_casa    = ucwords($request->nro_casa);
@@ -31,16 +31,13 @@ class DireccionController extends Controller
 
         return redirect()->route('direccion.index')->with('success','Dirección registrada satisfactoriamente.');    
     }
-    public function show($id)
-    {
+    public function show($id){
         //
     }
-    public function edit($id)
-    {
+    public function edit($id){
         //
     }
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
 
         $request->validate([
             'estado'        => 'required',
@@ -62,13 +59,13 @@ class DireccionController extends Controller
             'nro_casa'      => ucwords($request->nro_casa)
         ];
 
-        Direccion::where('id',$id)->update($update);
+        Direction::where('id',$id)->update($update);
         
         return redirect()->route('direccion.index')->with('success','Dirección actualizada satisfactoriamente!');
     }
-    public function destroy($id)
-    {
-       Direccion::where('id',$id)->delete();
+    public function destroy($id){
+       Direction::where('id',$id)->delete();
         return redirect()->route('direccion.index')->with('success','Dirección eliminada satisfactoriamente');
     }
+
 }

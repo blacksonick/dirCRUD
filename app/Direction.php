@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Direccion extends Model
+class Direction extends Model
 {
     protected $fillable = [
-    	'estado',
-    	'municipio',
-    	'ciudad',
-    	'parroquia',
+    	'id_estado',
+    	'id_municipio',
+    	'id_ciudad',
+    	'id_parroquia',
     	'calle',
     	'avenida',
     	'nro_casa'

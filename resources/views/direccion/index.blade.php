@@ -53,10 +53,10 @@
                 @foreach($direccion as $dir)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td><a href="#">{{ $dir->ciudad }}</a></td>
-                        <td>{{ $dir->municipio }}</td>                        
-                        <td>{{ $dir->estado }}</td>
-                        <td>{{ $dir->parroquia }}</td>
+                        <td><a href="#">{{ $dir->id_ciudad }}</a></td>
+                        <td>{{ $dir->id_municipio }}</td>                        
+                        <td>{{ $dir->id_estado }}</td>
+                        <td>{{ $dir->id_parroquia }}</td>
                         <td>{{ $dir->calle }}</td>
                         <td>{{ $dir->avenida }}</td>
                         <td>{{ $dir->nro_casa }}</td>

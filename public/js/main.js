@@ -30,19 +30,46 @@ $(document).ready(function(){
 
 /*---------- Listar Estados/Municipios/Ciudades/Parroquias ----------*/
 $(document).ready(function(){
-    $("#id_direccion").change(function(){
-        $.get(URL+'/',"id_estado="+$("#id_estado").val(), function(respuesta){
-            $("#id_municipio").html(respuesta);
+    $("#select_estados").change(function(){
+        var id_estado = $(this).val();
+        if(!id_estado){
+            $("#select_municipios").html('');
+            $("#select_ciudades").html('');
+            return;  
+        }
+        
+        // AJAX // 
+        $.get('/api/municipio/'+id_estado,function(data){
+            var out = '<option value="">Seleccione un municipio</option>';
+            for (var i = 0; i < data.length; ++i) {
+                out += '<option value="'+ data[i].id +'">'+ data[i].municipio +'</option>';
+            }
+            $("#select_municipios").html(out);  
+        });
+        
+        // AJAX // 
+        $.get('/api/ciudad/'+id_estado,function(data){
+            var out = '<option value="">Seleccione una ciudad</option>';
+            for (var i = 0; i < data.length; ++i) {
+                out += '<option value="'+ data[i].id +'">'+ data[i].ciudad +'</option>';
+            }
+            $("#select_ciudades").html(out);  
         });
     });
-    $("#id_estado").change(function(){
-        $.get(URL+'jQuery/ciudad',"id_estado="+$("#id_estado").val(), function(respuesta){
-            $("#id_ciudad").html(respuesta);
-        });
-    });
-    $("#id_municipio").change(function(){
-        $.get(URL+'jQuery/parroquia',"id_municipio="+$("#id_municipio").val(), function(respuesta){
-            $("#id_parroquia").html(respuesta);
+    $("#select_municipios").change(function(){
+        var id_estado = $(this).val();
+        if(!id_estado){
+            $("#select_parroquias").html('');
+            return;  
+        }
+        
+        // AJAX // 
+        $.get('/api/parroquia/'+id_estado,function(data){
+            var out = '<option value="">Seleccione una parroquia</option>';
+            for (var i = 0; i < data.length; ++i) {
+                out += '<option value="'+ data[i].id +'">'+ data[i].parroquia +'</option>';
+            }
+            $("#select_parroquias").html(out);  
         });
     });
 });

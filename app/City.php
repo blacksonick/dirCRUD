@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Municipio extends Model
+class City extends Model
 {
     protected $fillable = [
-    	'municipio',
+    	'ciudad',
     	'id_estado'
     ];
 }

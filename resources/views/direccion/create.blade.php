@@ -22,20 +22,28 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
-							<strong>Ingrese un estado</strong>
-							<input type="text"  name="estado" class="form-control validate" required>
+							<strong>Selecciones un estado de la lista</strong>
+							<select id="select_estados" name="estado" class="form-control validate" required>
+								<option value="">Selecciones un estado</option>
+								@foreach($estados as $estado)
+									<option value="{{ $estado->id }}">{{ $estado->estado }}</option>
+								@endforeach
+							</select>
 						</div>
 						<div class="form-group">
-							<strong>Ingrese un municipio</strong>
-							<input type="text"  name="municipio" class="form-control validate"  required>
+							<strong>Selecciones un municipio de la lista</strong>
+							<select id="select_municipios" name="municipio" class="form-control validate" required>
+							</select>
 						</div>
 						<div class="form-group">
-							<strong>Ingrese una ciudad</strong>
-							<input type="text"  name="ciudad" class="form-control validate" required>
+							<strong>Selecciones una ciudad de la lista</strong>
+							<select id="select_ciudades" name="ciudad" class="form-control validate" required>
+							</select>
 						</div>
 						<div class="form-group">
-							<strong>Ingrese una parroquia</strong>
-							<input type="text"  name="parroquia" class="form-control validate" required>
+							<strong>Selecciones una parroquia de la lista</strong>
+							<select id="select_parroquias" name="parroquia" class="form-control validate" required>
+							</select>
 						</div>
 					</div>
 					<div class="col-md-6">
