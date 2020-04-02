@@ -7,6 +7,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('direccion','DireccionController');
+Route::resource('estado','EstadoController');
 
 
 Route::get('/cancelar',function(){

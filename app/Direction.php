@@ -11,8 +11,6 @@ class Direction extends Model
     	'id_municipio',
     	'id_ciudad',
     	'id_parroquia',
-    	'calle',
-    	'avenida',
     	'nro_casa'
     ];
 }

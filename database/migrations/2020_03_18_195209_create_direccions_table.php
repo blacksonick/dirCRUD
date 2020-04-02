@@ -44,8 +44,6 @@ class CreateDireccionsTable extends Migration
             $table->foreign('id_municipio')->references('id')->on('municipios');
             $table->foreign('id_ciudad')->references('id')->on('ciudads');
             $table->foreign('id_parroquia')->references('id')->on('parroquias');
-            $table->string('calle');
-            $table->string('avenida');
             $table->string('nro_casa');
             $table->timestamps();
         });

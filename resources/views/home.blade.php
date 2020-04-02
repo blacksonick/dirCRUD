@@ -6,5 +6,6 @@
   
         <h4 class="my-4 text-center">Desarrollado por:<br><small> Yoangel Eizaga</small></h4>
 </div>
+
         
 @endsection
