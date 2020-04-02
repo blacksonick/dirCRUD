@@ -20,7 +20,7 @@ class CreateDireccionsTable extends Migration
             $table->string('municipio');
             $table->timestamps();
         });
-        Schema::create('citys', function (Blueprint $table) {
+        Schema::create('ciudads', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_estado');
             $table->foreign('id_estado')->references('id')->on('states');
@@ -42,7 +42,7 @@ class CreateDireccionsTable extends Migration
             $table->unsignedBigInteger('id_parroquia');
             $table->foreign('id_estado')->references('id')->on('states');
             $table->foreign('id_municipio')->references('id')->on('municipios');
-            $table->foreign('id_ciudad')->references('id')->on('citys');
+            $table->foreign('id_ciudad')->references('id')->on('ciudads');
             $table->foreign('id_parroquia')->references('id')->on('parroquias');
             $table->string('calle');
             $table->string('avenida');
@@ -54,7 +54,7 @@ class CreateDireccionsTable extends Migration
     {
         Schema::dropIfExists('states');
         Schema::dropIfExists('municipios');
-        Schema::dropIfExists('citys');
+        Schema::dropIfExists('ciudads');
         Schema::dropIfExists('parroquias');
         Schema::dropIfExists('directions');
     }

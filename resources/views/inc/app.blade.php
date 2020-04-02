@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -56,8 +57,7 @@
                 </div>
             </div>
         </nav>
-
-        <div class="container pt-5 mt-5">
+        <div class="container-fluid pt-5 mt-5">
             <div class="row">  
                 @yield('contenido')
             </div>

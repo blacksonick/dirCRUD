@@ -1,10 +1,9 @@
 @extends('inc.app')
 @section('title' ,'| Listado')
 @section('contenido')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="table-title bg-color-2 py-3 mt-2 mb-3">
+        @include('inc.sidebar')
+        <div class="col-md-8">
+            <div class="table-title bg-color-2 py-3 mt-2 mb-3 mr-1">
                 <div class="row">
                     <div class="col-sm-5">
                         <h2>Listado de <b>Direcciones</b></h2>
@@ -15,8 +14,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12">
             @if( session('success') )
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}!
@@ -33,8 +30,6 @@
                 </button>
             </div>
             @endif  
-        </div>
-        <div class="col-md-12">
             <table class="table table-hover table-responsive-md">
                 <thead class="thead-dark">
                     <tr>
@@ -159,12 +154,5 @@
                 @endforeach
                 </tbody>
             </table>
-            <div id="id_direccion">
-                <ul>
-                    
-                </ul>
-            </div>
         </div>
-    </div>
-</div>
 @endsection

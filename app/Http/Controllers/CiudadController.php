@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\City;
+use App\Ciudad;
 class CiudadController extends Controller
 {
     public function obtener_ciudades($id){
-    	return City::where('id_estado',$id)->get();
+    	return Ciudad::where('id_estado',$id)->get();
     }
 }

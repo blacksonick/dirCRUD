@@ -8,6 +8,11 @@ use App\State;
 
 class DireccionController extends Controller
 {
+    public function __construct()
+    {
+        # esto me redirige al login si no esta iniciada una sesion
+        $this->middleware('auth'); 
+    }
     public function index(){
 
         $data['direccion'] = Direction::orderBy('id','desc')->paginate(10);
